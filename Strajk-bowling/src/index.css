@@ -4,3 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.text_line {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #441D81;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin: 50px 0px 20px 0px;
+    width: 80%; /* Ensure the container takes up available space */
+  }
+  
+  .text_line::before,
+  .text_line::after {
+    content: "";
+    flex-grow: 1;
+    border-bottom: 1px solid #441D81;
+    margin: 0 8px;
+  }

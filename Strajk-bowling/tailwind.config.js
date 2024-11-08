@@ -13,6 +13,7 @@ export default {
       colors: {
         pink: '#FFF4F1', // Add your custom font here
         textpink: '#EC315A', // Add your custom font here
+        menuBlack: '#1C1919'
       },
     },
   },
