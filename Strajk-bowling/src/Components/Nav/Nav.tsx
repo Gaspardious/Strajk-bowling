@@ -13,7 +13,7 @@ const Nav = () => {
     <div className='bg-pink'>
       {/* Menu icon */}
       <motion.img
-        src="public/navicon.png"
+        src="/navicon.png"
         alt="menu"
         className=" absolute text-white py-2 py-4 px-4 m-0 cursor-pointer"
         onClick={toggleMenu} // Open the menu when clicked
