@@ -35,7 +35,7 @@ const Confirmation = () => {
           id="when"
           name="when"
           value={when}
-          className="bg-pink focus:outline-none w-96"
+          className="bg-pink focus:outline-none w-80"
           readOnly
         />
       </fieldset>
@@ -47,7 +47,7 @@ const Confirmation = () => {
           id="who"
           name="who"
           value= {people}
-          className="bg-pink focus:outline-none w-96"
+          className="bg-pink focus:outline-none w-80"
           readOnly
         />
       </fieldset>
@@ -59,7 +59,7 @@ const Confirmation = () => {
           id="lanes"
           name="lanes"
           value={lanes}
-          className="bg-pink focus:outline-none w-96"
+          className="bg-pink focus:outline-none w-80"
           readOnly
         />
       </fieldset>
@@ -71,12 +71,12 @@ const Confirmation = () => {
           id="id"
           name="id"
           value={id}
-          className="bg-pink focus:outline-none w-96"
+          className="bg-pink focus:outline-none w-80"
           readOnly
         />
       </fieldset>
 
-      <fieldset className="border-2 border-textpink p-2.5 rounded-md mt-20 w-96">
+      <fieldset className="border-2 border-textpink p-2.5 rounded-md mt-20 w-80">
       <div className="flex justify-between w-full bg-pink p-2">
         <span className='text-2xl font-text font-bold text-red-500'>Total</span>
         <span className='text-2xl font-text text-red-500'>{price}</span>
@@ -85,7 +85,7 @@ const Confirmation = () => {
 
 
       <button 
-      className="bg-textpink text-white p-2.5 rounded-md mt-4 w-96"
+      className="bg-textpink text-white p-2.5 rounded-md mt-4 w-80"
       onClick={() => window.location.href = "/"}
       
       >SWEET, LET'S GO!</button>

@@ -11,7 +11,6 @@ const Booking = () => {
   const [lanes, setLanes] = useState<number>(1);
   const [shoes, setShoes] = useState<number[]>(Array(people).fill(0));
   
-  // Separate error states for each field
   const [dateError, setDateError] = useState<string | null>(null);
   const [timeError, setTimeError] = useState<string | null>(null);
   const [peopleError, setPeopleError] = useState<string | null>(null);
@@ -108,6 +107,7 @@ const Booking = () => {
     }
   };
 
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center h-screen bg-pink">
@@ -116,66 +116,66 @@ const Booking = () => {
         <form className="m-3">
           <section className="flex gap-5 justify-center">
             <div className='flex justify-center flex-col items-center'>
-              <fieldset className={`border ${dateError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md w-48`}>
+              <fieldset className={`border ${dateError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md w-40 flex justify-center`}>
                 <legend className="p-1.5 text-xs">DATE</legend>
                 <input
                   type="date"
                   id="date"
                   name="date"
-                  className="bg-pink focus:outline-none text-xs"
+                  className="bg-pink focus:outline-none text-s"
                   value={date}
                   onChange={(event) => setDate(event.target.value)}
                 />
               </fieldset>
-              {dateError && <p className="text-xs text-white bg-red-500 p-1 text-center w-48 rounded-md mt-1">{dateError}</p>}
+              {dateError && <p className="text-xs text-white bg-red-500 p-1 text-center w-40 rounded-md mt-1">{dateError}</p>}
             </div>
 
             <div className='flex justify-center flex-col items-center'>
-            <fieldset className={`border ${timeError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md w-48`}>
+            <fieldset className={`border ${timeError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md w-40 flex justify-center`}>
               <legend className="p-1.5 text-xs">TIME</legend>
               <input
                 type="time"
                 id="time"
                 name="time"
-                className="bg-pink focus:outline-none text-xs"
+                className="bg-pink focus:outline-none text-s"
                 value={time}
                 onChange={(event) => setTime(event.target.value)}
               />
             </fieldset>
-            {timeError && <p className="text-xs text-white bg-red-500 p-1 text-center w-48 rounded-md mt-1">{timeError}</p>}
+            {timeError && <p className="text-xs text-white bg-red-500 p-1 text-center w-40 rounded-md mt-1">{timeError}</p>}
             </div>
           </section>
 
           <div className='flex justify-center flex-col items-center'>
-          <fieldset className={`border ${peopleError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md mt-2 w-96`}>
+          <fieldset className={`border ${peopleError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md mt-2 w-80`}>
             <legend className="p-1.5 text-xs">NUMBER OF AWESOME BOWLERS</legend>
             <input
               type="number"
               id="people"
               name="people"
-              className="bg-pink focus:outline-none w-96"
+              className="bg-pink focus:outline-none w-80"
               value={people}
               min={1}
               onChange={handlePeopleChange}
             />
           </fieldset>
-          {peopleError && <p className="text-xs text-white bg-red-500 p-1 text-center w-32 rounded-md w-96 mt-1">{peopleError}</p>}
+          {peopleError && <p className="text-xs text-white bg-red-500 p-1 text-center w-32 rounded-md w-80 mt-1">{peopleError}</p>}
           </div>
 
           <div className='flex justify-center flex-col items-center'>
-          <fieldset className={`border ${lanesError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md mt-2 w-96`}>
+          <fieldset className={`border ${lanesError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md mt-2 w-80`}>
             <legend className="p-1.5 text-xs">NUMBER OF LANES</legend>
             <input
               type="number"
               id="lanes"
               name="lanes"
-              className="bg-pink focus:outline-none w-96"
+              className="bg-pink focus:outline-none w-80"
               value={lanes}
               min={1}
               onChange={(event) => setLanes(parseInt(event.target.value))}
             />
           </fieldset>
-          {lanesError && <p className="text-xs text-white bg-red-500 p-1 text-center w-32 rounded-md w-96 mt-1">{lanesError}</p>}
+          {lanesError && <p className="text-xs text-white bg-red-500 p-1 text-center w-32 rounded-md w-80 mt-1">{lanesError}</p>}
           </div>
 
           <div className="flex items-center justify-center">
@@ -186,13 +186,13 @@ const Booking = () => {
           {shoes.map((shoeSize, index) => (
             <fieldset
               key={index}
-              className={`border ${shoeError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md mt-2 w-96`}
+              className={`border ${shoeError ? 'border-red-500' : 'border-menuBlack'} p-2.5 rounded-md mt-2 w-80`}
             >
               <legend className="p-1.5 text-xs">SHOE SIZE / PERSON {index + 1}</legend>
               <select
                 id={`shoeSize-${index}`}
                 name={`shoeSize-${index}`}
-                className="bg-pink focus:outline-none w-96"
+                className="bg-pink focus:outline-none w-80"
                 value={shoeSize}
                 onChange={(event) =>
                   handleShoeSizeChange(index, parseInt(event.target.value))
@@ -206,11 +206,11 @@ const Booking = () => {
               </select>
             </fieldset>
           ))}
-          {shoeError && <p className="text-xs text-white bg-red-500 p-1 text-center w-32 rounded-md w-96 mt-1">{shoeError}</p>}
+          {shoeError && <p className="text-xs text-white bg-red-500 p-1 text-center w-32 rounded-md w-80 mt-1">{shoeError}</p>}
 
           <button
             type="button"
-            className="bg-textpink text-2xl text-white p-2.5 rounded-md mt-9 w-96 items-center justify-center"
+            className="bg-textpink text-2xl text-white p-2.5 rounded-md mt-9 w-80 items-center justify-center"
             onClick={handleSubmit}
           >
             STRIIIIIIIKE
