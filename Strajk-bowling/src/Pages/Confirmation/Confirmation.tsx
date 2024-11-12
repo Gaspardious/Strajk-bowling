@@ -16,50 +16,50 @@ const Confirmation = () => {
       <h1 className="font-title text-6xl text-textpink">SEE YOU SOON</h1>
       <h2 className="text_line">BOOKING DETAILS</h2>
 
-      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2 w-96">
+      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2">
         <legend className="p-1.5 text-xs">WHEN</legend>
         <input
           type="text"
           id="when"
           name="when"
           value={when}
-          className="bg-pink focus:outline-none"
+          className="bg-pink focus:outline-none w-96"
           readOnly
         />
       </fieldset>
 
-      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2 w-96">
+      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2">
         <legend className="p-1.5 text-xs">WHO</legend>
         <input
           type="text"
           id="who"
           name="who"
           value= {people}
-          className="bg-pink focus:outline-none"
+          className="bg-pink focus:outline-none w-96"
           readOnly
         />
       </fieldset>
 
-      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2 w-96">
+      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2">
         <legend className="p-1.5 text-xs">NUMBER OF LANES</legend>
         <input
           type="text"
           id="lanes"
           name="lanes"
           value={lanes}
-          className="bg-pink focus:outline-none"
+          className="bg-pink focus:outline-none w-96"
           readOnly
         />
       </fieldset>
 
-      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2 w-96">
+      <fieldset className="border border-menuBlack p-2.5 rounded-md mt-2">
         <legend className="p-1.5 text-xs">BOOKING NUMBER</legend>
         <input
           type="text"
           id="id"
           name="id"
           value={id}
-          className="bg-pink focus:outline-none"
+          className="bg-pink focus:outline-none w-96"
           readOnly
         />
       </fieldset>
