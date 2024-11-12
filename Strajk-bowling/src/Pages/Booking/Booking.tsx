@@ -53,7 +53,7 @@ const Booking = () => {
     setLanesError(null);
     setShoeError(null);
 
-    let hasError: any = false;
+    let hasError: boolean = false;
 
     if (!date) {
       setDateError("Please select a DATE.");

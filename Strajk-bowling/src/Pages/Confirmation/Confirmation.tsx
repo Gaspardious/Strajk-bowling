@@ -5,11 +5,23 @@ const Confirmation = () => {
   const location = useLocation();
   const bookingData = location.state as BookingResponse;
 
-  const when: string = bookingData?.when ?? "No booking date set 📅";
-  const lanes: string = bookingData?.lanes ? `${bookingData.lanes} lane(s)` : "No lanes booked 🎳";
-  const people: string = bookingData?.people ? `${bookingData.people} person(s)` : "No bowlers booked 🎳";
-  const price: string = bookingData?.price ? `${bookingData.price} sek` : "-";
-  const id: string = bookingData?.id ?? "No booking ID";
+  const defaultBooking: BookingResponse = {
+    when: "No booking date set 📅",
+    lanes: 0,
+    people: 0,
+    price: 0,
+    id: "No booking ID",
+    shoes: [], 
+    active: false,
+  };
+  
+  const {
+    when = defaultBooking.when,
+    lanes = bookingData?.lanes ? `${bookingData.lanes} lane(s)` : "No lanes booked 🎳",
+    people = bookingData?.people ? `${bookingData.people} person(s)` : "No bowlers booked 🎳",
+    price = bookingData?.price ? `${bookingData.price} sek` : "-",
+    id = bookingData?.id || defaultBooking.id,
+  } = bookingData || defaultBooking;
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-pink">
