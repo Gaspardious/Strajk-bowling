@@ -8,7 +8,7 @@ const Confirmation = () => {
   const when: string = bookingData?.when ?? "No booking date set 📅";
   const lanes: string = bookingData?.lanes ? `${bookingData.lanes} lane(s)` : "No lanes booked 🎳";
   const people: string = bookingData?.people ? `${bookingData.people} person(s)` : "No bowlers booked 🎳";
-  const price: string = bookingData?.price ? `${bookingData.price} sek` : "You didn't book anything 🤷‍♂️";
+  const price: string = bookingData?.price ? `${bookingData.price} sek` : "-";
   const id: string = bookingData?.id ?? "No booking ID";
 
   return (
