@@ -1,7 +1,6 @@
 
 
 export const ShoeSizes = {
-
     [0]: "Size",
     [1]: "Euro 36",
     [2]: "Euro 37",
@@ -20,8 +19,4 @@ export const ShoeSizes = {
     [15]: "Euro 50",
     [16]: "Euro 51",
     [17]: "Euro 52",
-
-
-
-
     };

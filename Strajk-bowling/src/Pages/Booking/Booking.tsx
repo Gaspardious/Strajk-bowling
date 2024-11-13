@@ -21,7 +21,7 @@ const Booking = () => {
 
   const handlePeopleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = event.target.value;
-    setPeopleError(null); // Reset error on change
+    setPeopleError(null); 
 
     if (/[^0-9]/.test(value)) {
       setPeopleError('Please enter only numbers');
@@ -29,7 +29,6 @@ const Booking = () => {
       const peopleCount: number = parseInt(value);
       setPeople(peopleCount);
 
-      // Adjust the shoes array to match the number of people
       if (peopleCount > shoes.length) {
         setShoes([...shoes, ...Array(peopleCount - shoes.length).fill(0)]);
       } else {
@@ -75,7 +74,6 @@ const Booking = () => {
       hasError = true;
     }
 
-    // Validate lane capacity
     if ((lanes === 1 && people > 4) || (lanes === 2 && people > 8)) {
       setLanesError("1 lane supports up to 4 people, and 2 lanes support up to 8 people. Please adjust the lanes or the number of people.");
       hasError = true;
@@ -83,7 +81,6 @@ const Booking = () => {
 
     if (hasError) return;
 
-    // Proceed with booking if no errors
     const bookingData: BookingRequest = {
       when: `Date: ${date} / Time: ${time}`,
       lanes,
@@ -95,10 +92,8 @@ const Booking = () => {
       const response: any = await createBooking(bookingData);
       
       if ("when" in response) {
-        // Navigate to Confirmation with booking data in state
         navigate("/confirmation", { state: response });
       } else {
-        // If response has a message, display it as a generic error
         setLanesError(response.message);
       }
     } catch (error) {

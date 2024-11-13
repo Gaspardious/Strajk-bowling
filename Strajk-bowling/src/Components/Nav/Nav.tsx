@@ -19,7 +19,6 @@ const Nav = () => {
         onClick={toggleMenu} // Open the menu when clicked
       />
 
-      {/* Slide-in menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
